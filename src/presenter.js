@@ -7,7 +7,8 @@ const form = document.querySelector("#totalizador-form")
 const div = document.querySelector("#resultado-div")
 const precio_resultado = document.querySelector("#precio-span")
 const items_resultado = document.querySelector("#items-span")
-
+const estado = document.querySelector("#estado");
+const estado_resul = document.querySelector("#estado-span")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -16,4 +17,5 @@ form.addEventListener("submit", (event) => {
   //div.innerHTML = items.value;
   items_resultado.innerHTML = items.value;
   precio_resultado.innerHTML = precio.value;
+  estado_resul.innerHTML = estado.value;
 });

@@ -6,18 +6,31 @@
       <label for="cantidad">Cantidad de items:</label>
       <input type="number" id="cantidad_items" />
       <input type="submit" value="Mostrar" id="mostrar-button" />
-      <p></p>
+      <br>
       <label for="cantidad">Precio por item:</label>
       <input type="number" id="precio_item" />
+      <input type="submit" value="Mostrar" id="mostrar-button" />
+
+      <br>
+      <label for="estado">Codigo de estado:</label>
+      <select id="estado">
+        <option value="ut">UT</option>
+        <option value="nv">NV</option>
+        <option value="tx">TX</option>
+        <option value="al">AL</option>
+        <option value="ca">CA</option>
+      </select>
       <input type="submit" value="Mostrar" id="mostrar-button" />
     </form>
     <div id="resultado-div"></div>
     <h3>Items:</h3>
     <span id="items-span"></span> 
-    <p></p>
+    <br>
     <h3>Precio:</h3>
     <span id="precio-span"></span> 
-
+    <br>
+    <h3>Estados:</h3>
+    <span id="estado-span"></span>
     <script type="module" src="./src/presenter.js"></script>
   </body>
   </body>
