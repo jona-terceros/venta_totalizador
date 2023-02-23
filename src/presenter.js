@@ -10,7 +10,7 @@ const items_resultado = document.querySelector("#items-span")
 const estado = document.querySelector("#estado");
 const estado_resul = document.querySelector("#estado-span")
 const estado_impuesto_resul = document.querySelector("#estado-impuesto-span")
-
+const precio_neto_resul = document.querySelector("#precio-neto-span")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -20,6 +20,7 @@ form.addEventListener("submit", (event) => {
   items_resultado.innerHTML = items.value;
   precio_resultado.innerHTML = precio.value;
   estado_resul.innerHTML = estado.value;
+  precio_neto_resul.innerHTML = items.value * precio.value;
 
   let impuesto;
   switch (estado.value) {
