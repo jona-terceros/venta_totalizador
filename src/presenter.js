@@ -3,26 +3,29 @@ import sumar from "./sumador";
 
 const items = document.querySelector("#cantidad_items");
 const precio = document.querySelector("#precio_item");
-const form = document.querySelector("#totalizador-form")
-const div = document.querySelector("#resultado-div")
-const precio_resultado = document.querySelector("#precio-span")
-const items_resultado = document.querySelector("#items-span")
 const estado = document.querySelector("#estado");
-const estado_resul = document.querySelector("#estado-span")
+const form = document.querySelector("#totalizador-form")
+const precio_neto_resultado = document.querySelector("#precio-neto-span")
 const estado_impuesto_resul = document.querySelector("#estado-impuesto-span")
-const precio_neto_resul = document.querySelector("#precio-neto-span")
+const estado_seleccionado = document.querySelector("#estado-seleccionado")
+const impuesto_resul = document.querySelector("#impuesto-seleccionado")
+const precio_total_resul = document.querySelector("#precio-total-span") 
+
+
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // const firstNumber = Number.parseInt(first.value);
 
-  //div.innerHTML = items.value;
-  items_resultado.innerHTML = items.value;
-  precio_resultado.innerHTML = precio.value;
-  estado_resul.innerHTML = estado.value;
-  precio_neto_resul.innerHTML = items.value * precio.value;
+  let precioNeto = precio.value * items.value;
+  precio_neto_resultado.innerHTML = precioNeto;
 
+  let precioTotal;
+  let tasaImpuesto;
   let impuesto;
+
+  let descuento;
+
   switch (estado.value) {
     case "ut":
       impuesto = 6.65; 
@@ -40,5 +43,15 @@ form.addEventListener("submit", (event) => {
       impuesto = 8.25; 
       break;
   }
-  estado_impuesto_resul.innerHTML = impuesto;
+
+  tasaImpuesto = (precioNeto * (impuesto / 100));
+  estado_impuesto_resul.innerHTML = tasaImpuesto;
+  estado_seleccionado.innerHTML = estado.value;
+  impuesto_resul.innerHTML = impuesto;
+
+  
+  precioTotal = (precioNeto) + tasaImpuesto;
+
+
+  precio_total_resul.innerHTML = precioTotal;
 });
